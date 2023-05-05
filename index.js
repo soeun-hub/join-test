@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
-const port = 8080;
+const port = 3033;
 
-const User = require('./models/User');
+const { User } = require('./models/User');
 
 app.use(express.urlencoded({extended : true }));
 app.use(express.json());
@@ -25,7 +25,7 @@ app.post('/register', (req, res) => {
 app.listen(port, () => console.log(`${port} 포트입니다.`));
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://soeun:Aa3NBbiuXyzj0MCg@join-test.obuuqua.mongodb.net/?retryWrites=true&w=majoritydf',{
+mongoose.connect('mongodb+srv://soeun:Aa3NBbiuXyzj0MCg@join-test.obuuqua.mongodb.net/?retryWrites=true&w=majority',{
     // useNewUrlPaser : true,
     // useUnitfiedTofology : true,
     // useCreateIndex : true,

@@ -11,6 +11,10 @@ const userSchema = mongoose.Schema({
         trim : true, // space 제거
         unique : 1, // 값의 중복 방지
     },
+    password : {
+        type : String,
+        minLength : 5,
+    },
     role : {
         type : Number,
         default : 0, // 값이 없으면 0 
@@ -25,4 +29,4 @@ const userSchema = mongoose.Schema({
 
 const User = mongoose.model('User', userSchema); // userSchema를 model로 감싸준다
 
-module.exports = {User};
+module.exports = { User };
