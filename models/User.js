@@ -5,7 +5,7 @@ const userSchema = mongoose.Schema({
         type : String,
         maxLength : 50,
     },
-    emial : {
+    email : {
         type : String,
         maxLength : 50,
         trim : true, // space 제거
@@ -13,7 +13,7 @@ const userSchema = mongoose.Schema({
     },
     role : {
         type : Number,
-        default : 0, // 값이 없으면 0
+        default : 0, // 값이 없으면 0 
     },
     token : {
         type : String,
