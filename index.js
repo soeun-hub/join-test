@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3033;
+const port = 8080;
 
 const { User } = require('./models/User');
 
@@ -14,7 +14,7 @@ app.get('/',function(req, res){
 app.post('/register', (req, res) => {
     const user = new User(req.body);
     user.save((err, userInfo) => {
-        if(err) return res.json({ success : failse, err });
+        if(err) return res.json({ success : false, err });
         return res.status(200).json({
             success : true,
             userInfo,
@@ -33,3 +33,10 @@ mongoose.connect('mongodb+srv://soeun:Aa3NBbiuXyzj0MCg@join-test.obuuqua.mongodb
 }).then(() => console.log('mongoDB connected!')).catch((err) => {
     console.log(err);
 });
+
+
+// longjohn
+if (process.env.NODE_ENV !== 'production'){
+    require('longjohn');
+  };
+
